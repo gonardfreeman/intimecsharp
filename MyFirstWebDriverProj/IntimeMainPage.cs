@@ -15,5 +15,10 @@ namespace MyFirstWebDriverProj
         {
             this.driver.Url = url;
         }
+        public string AssertText(By by)
+        {
+            string text = this.driver.FindElement(by).Text;
+            return text;
+        }
     }
 }
