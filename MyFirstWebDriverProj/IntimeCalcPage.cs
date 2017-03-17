@@ -1,6 +1,6 @@
 ﻿using System;
 using OpenQA.Selenium;
-using OpenQA.Selenium.Support.UI;
+using NUnit.Framework;
 
 namespace MyFirstWebDriverProj
 { 
@@ -39,7 +39,7 @@ namespace MyFirstWebDriverProj
             }
             else
             {
-                Console.WriteLine("Nothing find :(");
+                Assert.Fail("Nothing find :(");
             }
         }
 
@@ -48,6 +48,10 @@ namespace MyFirstWebDriverProj
             driver.FindElement(by).SendKeys(vol);
         }
 
+        public void Clicker(By by)
+        {
+            driver.FindElement(by).Click();
+        }
 
     }
 }
